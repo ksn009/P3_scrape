@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>Dashboard</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.css" rel="stylesheet">
+
+  
+      
+
+
+
+</head>
+
+<body>
+  <main>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+
+  height: 100%;
+  width: 160px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top:20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 30px 16px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #f1f1f1;
+}
+
+.main {
+  margin-left: 160px; /* Same as the width of the sidenav */
+  font-size: 28px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+</head>
+<body>
+
+<div class="sidenav">
+ <img src="img/sellogo.png" height="50"></body></br></br></br></br>
+  <a href="">Dashboard</a>
+  <a href="invoice.html">Invoices</a>
+  <a href="payments.html">Payments</a>
+  <a href="clients.html">Clients</a>
+</div>
+    
+
+<!-- Navbar -->
+<!-- Full Page Intro -->
+<div class="view" style="background-image: url('img/12.jpg'); height:40vh; background-repeat: no-repeat; background-size: cover; background-position: center center;">
+  <!-- Mask & flexbox options-->
+  <div class="mask rgba-black-light align-items-center">
+    <!-- Content -->
+    <div class="container">
+      <!--Grid row-->
+      <div class="row">
+        <!--Grid column-->
+        <div class="col-md-12 mb-4 white-text text-center">
+          <h1 class="animated bounceInDown animation-delay:500ms;" data-wow-delay="0.3s"><strong>Selvitate Dashboard</strong></h1>
+          <hr class="hr-light my-4 wow fadeInDown" data-wow-delay="0.4s"  style="animation-delay: 100ms"; style="animation-name: fadeInLeft">
+          <h5 class="animated fadeInLeft animation-delay:500ms;"  data-wow-delay="0.4s" ><strong>Your Sales Engine !</strong></h5>
+          
+        </div>
+        <!--Grid column-->
+      </div>
+      <!--Grid row-->
+    </div>
+    <!-- Content -->
+  </div>
+  <!-- Mask & flexbox options-->
+</div>
+<!-- Full Page Intro -->
+
+
+
+<div class="container cloudy-knoxville-gradient  align-items-center" >
+
+  <!-- Grid row -->
+  <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-12 mb-4 mt-5">
+    
+        <!--Card Primary-->
+        <div class="card mdb-color text-center z-depth-2 animated zoomIn animation-delay:500mss;">
+          <div class="card-body">
+            <h3 class="text-uppercase font-weight-bold cyan-text mt-2 mb-3"><strong>TOTAL REVENUE</strong></h3>
+            <p class="white-text mb-0"> Total revenue here </p>
+          </div>
+        </div>
+        <!--/.Card Primary-->
+    
+      </div>
+      <!-- Grid column -->
+    
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-6 mb-4 mt-5">
+    
+        <!--Card Primary-->
+        <div class="card mdb-color text-center z-depth-2 animated zoomIn">
+          <div class="card-body">
+            <h3 class="text-uppercase font-weight-bold cyan-text mt-2 mb-3"><strong>TOTAL PENDING</strong></h3>
+            <p class="white-text mb-0"> pending paymnents here  </p>
+          </div>
+        </div>
+        <!--/.Card Primary-->
+    
+      </div>
+      <!-- Grid column -->
+    
+      <!-- Grid column -->
+      <div class="col-lg-4 col-md-6 mb-4 mt-5">
+    
+        <!--Card Primary-->
+        <div class="card mdb-color text-center z-depth-2 animated zoomIn">
+          <div class="card-body">
+            <h3 class="text-uppercase font-weight-bold cyan-text mt-2 mb-3"><strong>TOTAL INVOICES</strong></h3>
+            <p class="white-text mb-0"> total invoices raised here </p>
+          </div>
+        </div>
+        <!--/.Card Primary-->
+    
+      </div>
+
+  
+      <div class="col-md-5">
+          
+          <canvas id="lineChart"></canvas>
+
+        
+        </div>
+      
+    
+    
+    </div>
+
+     
+      </div>
+      <div class="container">
+      <canvas id="myChart"></canvas>
+    </div>
+      
+<div class="container cloudy-knoxville-gradient  " >
+
+    <!-- Grid row -->
+    <div class="row">
+  
+        <!-- Grid column -->
+        <div class="col-lg-6 col-md-12 mb-4 mt-5">
+      
+          <!--Card Primary-->
+          <div class="card mdb-color text-center z-depth-2 animated zoomIn">
+            <div class="card-body">
+              <h3 class="text-uppercase font-weight-bold cyan-text mt-2 mb-3"><strong>RECENT PAYMENTS</strong></h3>
+              <p class="white-text mb-0"> Recent paymnets here </p>
+              <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">Invoice</th>
+                      <th scope="col">Clients</th>
+                      <th scope="col">Payment dues</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+
+                <a href="#">More</a>
+             </div>
+             
+          </div>
+          <!--/.Card Primary-->
+      
+        </div>
+        <!-- Grid column -->
+      
+        <!-- Grid column -->
+        <div class="col-lg-6 col-md-6 mb-4 mt-5">
+      
+          <!--Card Primary-->
+          <div class="card mdb-color text-center z-depth-2">
+            <div class="card-body">
+              <h3 class="text-uppercase font-weight-bold cyan-text mt-2 mb-3"><strong>Upcoming Invoices</strong></h3>
+              <p class="white-text mb-0"> upcoming invoices here  </p>
+              <table class="table table-dark">
+                  <thead>
+                    <tr>
+                      <th scope="col">Invoice</th>
+                      <th scope="col">Clients</th>
+                      <th scope="col">Due Date</th>
+                      <th scope="col">Balance Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">1</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">2</th>
+                      <td></td>
+                      <td></td>
+                      <td></td>
+                    </tr>
+                    
+                  </tbody>
+                </table>
+                <a href="#">More</a>
+            </div>
+          </div>
+          <!--/.Card Primary-->
+      
+        </div>
+        <!-- Grid column -->
+      
+        <!-- Grid column -->
+      
+      
+      </div>
+  
+       
+        </div>
+
+        <div class="container cloudy-knoxville-gradient " >
+
+            <!-- Grid row -->
+            <div class="row">
+          
+                <!-- Grid column -->
+                <div class="col-lg-6 col-md-12 mb-4 mt-5">
+              
+                  <!--Card Primary-->
+                  <div class="card mdb-color text-center z-depth-2">
+                    <div class="card-body">
+                      <h3 class="text-uppercase font-weight-bold cyan-text mt-2 mb-3"><strong>PAST INVOICE DUES</strong></h3>
+                      <p class="white-text mb-0"> Past dues here </p>
+                      <table class="table table-dark">
+                          <thead>
+                            <tr>
+                              <th scope="col">Invoice</th>
+                              <th scope="col">Clients</th>
+                              <th scope="col">Due Date</th>
+                              <th scope="col">Balance Dues</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row">1</th>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th scope="row">2</th>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                        <a href="#">More</a>
+                    </div>
+                  </div>
+                  <!--/.Card Primary-->
+              
+                </div>
+                <!-- Grid column -->
+              
+                <!-- Grid column -->
+                <div class="col-lg-6 col-md-6 mb-4 mt-5">
+              
+                  <!--Card Primary-->
+                  <div class="card mdb-color text-center z-depth-2">
+                    <div class="card-body">
+                      <h3 class="text-uppercase font-weight-bold cyan-text mt-2 mb-3"><strong>TOTAL DUES</strong></h3>
+                      <p class="white-text mb-0"> Total Dues here  </p>
+                      <table class="table table-dark">
+                          <thead>
+                            <tr>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                              <th scope="col"></th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <th scope="row"></th>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            <tr>
+                              <th scope="row"></th>
+                              <td></td>
+                              <td></td>
+                              <td></td>
+                            </tr>
+                            
+                          </tbody>
+                        </table>
+                        <a href="#">More</a>
+                    </div>
+                  </div>
+                  <!--/.Card Primary-->
+              
+                </div>
+                <!-- Grid column -->
+              
+                <!-- Grid column -->
+                
+                    
+                
+                
+              
+              </div>
+          
+               
+                </div>
+
+                <footer class="page-footer font-small special-color-dark pt-4">
+
+                    <!-- Footer Elements -->
+                    <div class="container">
+                  
+                      <!--Grid row-->
+                      <div class="row">
+                  
+                        <!--Grid column-->
+                      
+                  
+                        <!--Grid column-->
+                        <div class="col-md-6 mb-4">
+                  
+                          
+                  
+                        </div>
+                        <!--Grid column-->
+                  
+                      </div>
+                      <!--Grid row-->
+                  
+                    </div>
+                    <!-- Footer Elements -->
+                  
+                    <!-- Copyright -->
+                    <div class="footer-copyright text-center py-3"> 2019 © Coyright:
+                      <a href="#">Selvitate Technologies Pvt Ltd All Rights Reserved
+                      </a>
+                    </div>
+                    <!-- Copyright -->
+                  
+                  </footer>
+        
+
+                
+    
+       
+
+
+  
+    
+    
+  <!-- Grid row -->
+  <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script type="text/javascript" src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script type="text/javascript" src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script type="text/javascript" src="js/mdb.min.js"></script>
+  
+  <script src="https://www.chartjs.org/dist/2.8.0/Chart.min.js"></script>
+ <script src="https://www.chartjs.org/samples/latest/utils.js"></script> 
+</main>
+       </body>
+
+        </html>
+
+        <script>
+            var ctx = document.getElementById('myChart');
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '  # Total revenue',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        }
+    }
+});
+            
+            </script>
